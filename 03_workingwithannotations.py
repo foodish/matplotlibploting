@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #### add title,axis lables,text
+'''
 X = np.linspace(-4, 4, 1024)
 Y = .25 * (X + 4.) * (X + 1.) * (X - 2.)
 
@@ -11,7 +12,6 @@ plt.title('Power curve for airfoil KV873')
 # plt.text(-0.5, -0.25, 'Brackmard minimum') # adding text
 
 ### adding box control
-'''
 box = {
 	'facecolor': '.75',
 	'edgecolor' : 'k',
@@ -19,7 +19,6 @@ box = {
 }
 
 plt.text(-0.5, -0.20, 'Brackmard minimum', bbox = box)
-'''
 
 ### adding arrow
 plt.annotate('Brackmard minimum',
@@ -32,4 +31,19 @@ plt.xlabel('Air speed') # adding x axis lable
 plt.ylabel('Total drag')
 plt.plot(X, Y,  c = 'k')
 plt.show()
+'''
 
+#### adding a legend(图例)
+x = np.linspace(-4,4,1024)
+
+y1 = np.sin(x)
+y2 = np.cos(x)
+
+plt.xlabel('x')
+plt.ylabel('y')
+
+plt.plot(x, y1, c = 'k', lw = 3., label = 'sin(x)')
+plt.plot(x, y2, c = '.5', lw = 3., ls = '--', label = 'cos(x)')
+
+plt.legend()
+plt.show()
